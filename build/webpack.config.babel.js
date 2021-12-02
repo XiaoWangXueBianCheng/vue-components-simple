@@ -11,7 +11,7 @@ const {
 const utils = require('./utils')
 const entry = require('./entry')
 
-const resolve = dir => path.resolve(__dirname, dir)
+const resolve = dir => path.resolve(__dirname, '../', dir)
 
 function readEnv (mode) {
   const fs = require('fs')
@@ -57,7 +57,7 @@ module.exports = (env, options) => {
     mode: 'production',
     entry: entry,
     output: {
-      path: path.resolve(__dirname, './lib'),
+      path: path.resolve(__dirname, '../', './lib'),
       filename: '[name].js',
       libraryTarget: 'commonjs2',
       globalObject: 'this',

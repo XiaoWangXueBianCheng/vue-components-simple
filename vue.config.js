@@ -6,7 +6,7 @@ module.exports = {
     host: process.env.VUE_APP_DOMIN,
     allowedHosts: [
       process.env.VUE_APP_DOMIN
-    ],
+    ]
     // proxy: {
     //   '/dev': {
     //     target: process.env.VUE_APP_PROXY_URL,
@@ -27,7 +27,7 @@ module.exports = {
         prependData: '@import "~@/assets/scss/variable.scss";'
       },
       sass: {
-        implementation: require('sass'), // This line must in sass option
+        implementation: require('sass') // This line must in sass option
       },
       // 给 less-loader 传递 Less.js 相关选项
       less: {

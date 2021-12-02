@@ -4,7 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 exports.assetsPath = function (__path) {
   return path.posix.join('theme_package', __path)
 }
-
+const variablesPath = '@/assets/scss/variable.scss'
+// const variablesPath = path.resolve(__dirname, '../', 'src/assets/scss/variable.scss')
 exports.cssLoaders = function (options) {
   options = options || {}
 
@@ -53,11 +54,12 @@ exports.cssLoaders = function (options) {
       }
     }),
     sass: generateLoaders('sass', {
+      implementation: require('sass'),
       indentedSyntax: true,
-      prependData: '@import "~@/assets/scss/variable.scss";'
+      additionalData: '@import "' + variablesPath + '";'
     }),
     scss: generateLoaders('sass', {
-      prependData: '@import "~@/assets/scss/variable.scss";'
+      additionalData: '@import "' + variablesPath + '";'
     }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')

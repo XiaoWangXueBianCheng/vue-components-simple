@@ -1,7 +1,8 @@
 import Dialog from './modules/dialog'
 import Popover from './modules/popover'
+import Icon from './modules/icon'
 const modules = [
-  Dialog, Popover
+  Dialog, Popover, Icon
 ]
 function install (Vue, opts = {}) {
   // 注册全局函数
@@ -16,5 +17,6 @@ function install (Vue, opts = {}) {
 export default {
   install,
   Dialog,
-  Popover
+  Popover,
+  Icon
 }
